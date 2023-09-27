@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="16dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:spacing="8dp">
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/default_profile_image"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/changeImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cambiar imagen"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre:"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellido:"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo:"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Departamento:"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distrito:"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvDistrict"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dirección:"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celular:"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña:"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número de tarjeta:"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvCardNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnEditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Perfil"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
+
+</ScrollView>

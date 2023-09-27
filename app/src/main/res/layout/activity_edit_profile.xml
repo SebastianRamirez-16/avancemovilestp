@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:spacing="8dp">
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Nombre"/>
+
+
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellido"/>
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/etDepartment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Departamento"/>
+
+        <EditText
+            android:id="@+id/etDistrict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Distrito"/>
+
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección"/>
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Celular"
+            android:inputType="phone"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/etCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número de tarjeta"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/btnSaveChanges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar Cambios"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+</ScrollView>
