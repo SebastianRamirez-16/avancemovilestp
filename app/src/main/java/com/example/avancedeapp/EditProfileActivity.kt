@@ -1,9 +1,11 @@
 package com.example.avancedeapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import org.json.JSONObject
 
 class EditProfileActivity : AppCompatActivity() {
 
@@ -46,9 +48,31 @@ class EditProfileActivity : AppCompatActivity() {
         etCardNumber.setText(intent.getStringExtra("Número de tarjeta"))
 
         btnSaveChanges.setOnClickListener {
-            // Aquí puedes guardar los cambios en tu backend o base de datos local
-            // Por ahora, simplemente finalizaremos la actividad para volver al perfil principal
-            finish()
+            saveChanges()
         }
+    }
+
+    private fun saveChanges() {
+        // Obtener los datos actualizados del usuario de los EditText
+        val updatedUserData = JSONObject().apply {
+            put("Nombre", etName.text.toString())
+            put("Apellido", etLastName.text.toString())
+            put("Correo", etEmail.text.toString())
+            put("Departamento", etDepartment.text.toString())
+            put("Distrito", etDistrict.text.toString())
+            put("Direccion", etAddress.text.toString())
+            put("Celular", etPhone.text.toString())
+            put("Contraseña", etPassword.text.toString())
+            put("Número de tarjeta", etCardNumber.text.toString())
+            // ... (put other fields in the JSONObject)
+        }
+
+        // Crear un nuevo objeto Intent y establecer el extra "userData"
+        val result = Intent()
+        result.putExtra("userData", updatedUserData.toString())
+
+        // Volver a la actividad principal e indicar que la operación fue exitosa
+        setResult(RESULT_OK, result)
+        finish()
     }
 }

@@ -39,6 +39,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var btnEditProfile: Button
 
+    companion object {
+        // Crear un objeto compañero para almacenar los datos del usuario
+        var userData = JSONObject()
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,11 +103,29 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
+            if (data.hasExtra("userData")) {
+                val updatedUserDataString = data.getStringExtra("userData")
+                val updatedUserData = JSONObject(updatedUserDataString)
+                updateUIWithUserData(updatedUserData)
+            }
+
             val selectedImageUri = data.data
             val imageStream: InputStream? = contentResolver.openInputStream(selectedImageUri!!)
             val selectedImage: Bitmap = BitmapFactory.decodeStream(imageStream)
             profileImage.setImageBitmap(selectedImage)
         }
+    }
+
+    private fun updateUIWithUserData(updatedUserData: JSONObject) {
+        tvName.text = updatedUserData.getString("Nombre")
+        tvLastName.text = updatedUserData.getString("Apellido")
+        tvEmail.text = updatedUserData.getString("Correo")
+        tvDepartment.text = updatedUserData.getString("Departamento")
+        tvDistrict.text = updatedUserData.getString("Distrito")
+        tvAddress.text = updatedUserData.getString("Direccion")
+        tvPhone.text = updatedUserData.getString("Celular")
+        tvPassword.text = updatedUserData.getString("Contraseña")
+        tvCardNumber.text = updatedUserData.getString("Número de tarjeta")
     }
     private fun fetchUserDetails() {
         // For simplicity, we'll use a coroutine to simulate fetching data from a fake API
@@ -128,6 +151,7 @@ class MainActivity : AppCompatActivity() {
             val jsonObject = JSONObject(jsonResponse)
 
             withContext(Dispatchers.Main) {
+                userData = jsonObject
                 // Update UI with the data
                 tvName.text = jsonObject.getString("Nombre")
                 tvLastName.text = jsonObject.getString("Apellido")
